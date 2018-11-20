@@ -1,0 +1,18 @@
+# conda env create -f environment-cpu.yml
+name: lcc
+channels:
+    - conda-forge
+    - menpo
+dependencies:
+    - python=3.6.5
+    - matplotlib
+    - numpy
+    - astropy
+    - pip
+    - pip:
+        - tensorflow==1.9
+        - keras
+    - pyyaml
+    - scikit-learn
+    - scipy
+

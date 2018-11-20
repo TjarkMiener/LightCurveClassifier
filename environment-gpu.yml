@@ -1,0 +1,18 @@
+# conda env create -f environment-gpu.yml
+name: lcc
+channels:
+    - conda-forge
+    - menpo
+dependencies:
+    - python=3.6.5
+    - matplotlib
+    - numpy
+    - astropy
+    - pip
+    - pip:
+        - tensorflow-gpu==1.9
+        - keras
+    - pytables
+    - pyyaml
+    - scikit-learn
+    - scipy
