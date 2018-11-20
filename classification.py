@@ -10,6 +10,7 @@ import numpy as np
 import const
 from astropy.io import fits
 import matplotlib.pyplot as plt
+plt.switch_backend('agg')
 
 import sklearn as sk
 #from sklearn import preprocessing

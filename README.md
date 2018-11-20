@@ -7,7 +7,7 @@ Light curve classifier (LCC) is an approach to classify lightcurves using convol
 
 ### Clone Repository with Git
 
-Clone the CTLearn repository:
+Clone the LCC repository:
 
 ```bash
 cd </installation/path>
@@ -36,7 +36,7 @@ NOTE for developers: If you wish to fork/clone the respository and make changes 
 ### Dependencies
 
 - Python 3.6.5
-- TensorFlow
+- TensorFlow 1.9.0
 - Keras
 - NumPy
 - Astropy
