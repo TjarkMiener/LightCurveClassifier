@@ -59,7 +59,7 @@ def neural_network(x_train,y_train,x_vali,y_vali):
     print('Build model...')
     model = Sequential()
             
-    model.add(Convolution2D(32, (3, 3),use_bias=False,input_shape=(1,150,150), data_format='channels_first'))
+    model.add(Convolution2D(32, (3, 3),use_bias=False,input_shape=(4,150,150), data_format='channels_first'))
     model.add(BatchNormalization())
     model.add(Activation("relu"))
     model.add(MaxPooling2D(pool_size=(2,2)))
@@ -127,7 +127,12 @@ def main():
     
     for i in np.arange(1,num_train+1,1):
         hdr = hdulTrain[i].header
-        x_train.append([hdulTrain[i].data[0]])
+        channels = []
+        channels.append(hdulTrain[i].data[0])
+        channels.append(hdulTrain[i].data[1])
+        channels.append(hdulTrain[i].data[2])
+        channels.append(hdulTrain[i].data[3])
+        x_train.append(channels)
         redshift_train.append(hdr['PHOTOZ'])
         ra_train.append(hdr['RA'])
         dec_train.append(hdr['DECL'])
@@ -143,7 +148,12 @@ def main():
     
     for i in np.arange(1,num_vali+1,1):
         hdr = hdulVali[i].header
-        x_vali.append([hdulVali[i].data[0]])
+        channels = []
+        channels.append(hdulVali[i].data[0])
+        channels.append(hdulVali[i].data[1])
+        channels.append(hdulVali[i].data[2])
+        channels.append(hdulVali[i].data[3])
+        x_vali.append(channels)
         redshift_vali.append(hdr['PHOTOZ'])
         ra_vali.append(hdr['RA'])
         dec_vali.append(hdr['DECL'])
